@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 """defines a class Square"""
 
 
@@ -12,4 +12,12 @@ class Square:
         Args:
             size (int): size of a side of the square
         Returns:
-            
+            None
+        """
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        else:
+            if size < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = size
