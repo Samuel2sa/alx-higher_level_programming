@@ -1,17 +1,19 @@
 #!/usr/bin/python3
-# 11-square.py
-"""Defines a Rectangle subclass Square."""
-Rectangle = __import__('9-rectangle').Rectangle
+"""
+Contains the class MyInt
+"""
 
 
-class Square(Rectangle):
-    """Represent a square."""
+class MyInt(int):
+    """rebel version of an integer, perfect for opposite day!"""
+    def __new__(cls, *args, **kwargs):
+        """create a new instance of the class"""
+        return super(MyInt, cls).__new__(cls, *args, **kwargs)
 
-    def __init__(self, size):
-        """Initialize a new square.
-        Args:
-            size (int): The size of the new square.
-        """
-        self.integer_validator("size", size)
-        super().__init__(size, size)
-        self.__size = size
+    def __eq__(self, other):
+        """what was != is now =="""
+        return int(self) != other
+
+    def __ne__(self, other):
+        """what was == is now !="""
+        return int(self) == other
