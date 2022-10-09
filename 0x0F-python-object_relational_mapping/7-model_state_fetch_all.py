@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-
-'''
-    Lists all state objs.
-'''
-
+"""
+lists all State objects from a database
+"""
 
 import sqlalchemy
 from sqlalchemy import create_engine
@@ -12,8 +10,6 @@ from sys import argv
 from model_state import Base, State
 
 if __name__ == "__main__":
-
-
     eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
 
                                                                     argv[2],
